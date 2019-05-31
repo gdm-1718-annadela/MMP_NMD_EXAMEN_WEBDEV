@@ -1,0 +1,168 @@
+.m-projects{
+  display: flex;
+  justify-content: flex-start;
+  flex-wrap: wrap;
+
+}
+
+.m-project {
+  margin: 0 2vw;
+}
+
+.m-card {
+  margin-top: 100px;
+  width: 20vw;
+  height: 45vh;
+  box-shadow: 5px 5px 5px gray;
+}
+
+.m-image__project{
+  position: relative;
+
+}
+
+.a-image {
+  position: fixed;
+  position: relative;
+  object-fit: cover;
+  width: 20vw;
+  height: 20vh;
+  z-index: -1;
+}
+
+.a-title__project {
+  color: $purple;
+  font-family: $font-family-title;
+  font-size: $font-size-30;
+}
+
+.a-explaination__project{
+  font-family: $font-family-sans-serif;
+  font-size: $font-size-14;
+}
+
+.m-bedrag__bar{
+  width: 80%;
+  background-color: #f1dccb;
+  height: 20px;
+}
+
+.a-create__project {
+  background-color: $purple;
+  width: 50px;
+  height: 50px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 50%;
+  margin: 0 auto;
+}
+
+.a-create__project i{
+  color: white;
+}
+
+.a-create__project:hover{
+  font-size: $font-size-20;
+  transition: 0.2s;
+}
+
+.a-title__projects{
+  display: none;
+}
+
+.a-create__project--mobile{
+  display: none;
+}
+
+.m-buttons__projects{
+  display: flex;
+  justify-content: space-between;
+}
+.a-button__projects{
+  margin-top: 10px;
+  width: 32%;
+  text-align: center;
+  font-family: $font-family-title;
+  font-size: $font-size-14;
+  color: $purple;
+  padding: 5px 0;
+}
+
+.a-edit__projects{
+  background-color: $pink;
+}
+
+.a-delete__projects{
+  background-color: $red;
+}
+
+.a-detail__projects{
+  background-color: $teal;
+}
+
+@media only screen and (max-width: 950px) {
+  .m-projects{
+    justify-content: space-around;
+    flex-wrap: wrap;
+    margin-bottom: 80px;
+  }
+
+  .m-project {
+    margin: 0;
+  }
+
+  .m-card {
+    margin-top: 20px;
+    width: 45vw;
+    height: 50vh;
+    box-shadow: 5px 5px 5px gray;
+  }
+
+  .a-image {
+    width: 45vw;
+    height: 20vh;
+    z-index: -1;
+  }
+
+  .m-add__card{
+    display: none;
+  }
+
+  .a-title__projects{
+    display: block;
+    text-align: center;
+    font-family: $font-family-title;
+    color: $purple;
+  }
+
+  .a-create__project--mobile{
+    display: block;
+    text-align: center;
+    background-color: $purple;
+    width: 50px;
+    height: 50px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 50%;
+    margin: 0 auto;
+    color: white;
+  }
+}
+
+@media only screen and (max-width: 500px) {
+  .m-projects{
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: 80px;
+  }
+
+  .m-card {
+    width: 80vw;
+  }
+
+  .a-image {
+    width: 80vw;
+  }
+}
