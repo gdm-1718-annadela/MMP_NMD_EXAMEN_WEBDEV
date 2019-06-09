@@ -36,7 +36,7 @@ MAIL_DRIVER=mailgun
 MAIL_HOST=smtp.mailgun.org  
 MAIL_PORT=587  
 1. Ga naar https://www.mailgun.com en maak een account aan.  
-2. eef in je sandbox de gewenste mailadressen aan om de gebruikers mails te kunnen laten
+2. Geef in je sandbox de gewenste mailadressen aan om de gebruikers mails te kunnen laten
 ontvangen.  
 
 MAIL_USERNAME=postmaster@sandbox142f8e77b5af46a9914160bfc37458fe.mailgun.org  
