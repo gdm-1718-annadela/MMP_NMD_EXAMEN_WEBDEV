@@ -63,13 +63,13 @@ Maak een account.
 
 STRIPE_KEY=/_public key_/  
 STRIPE_SECRET=/_secret key_/  
-CREDIT_RATIO=0.05 (_radius van credits._)
+CREDIT_RATIO=0.05 (_verhouding van credits._)
 
 1. Na de .env file inorde te brengen moet je nog een database inorde brengen. Zorg dat de server(_Ik gebruik hiervoor MAMP_)
 draait op de juiste poort en maak een database met jou eigen gekozen naam van in de .env file. Je kan de database.sql in de database importen.
-2. Wil je opnieuw starten, zorg dan dat er in de tabel "user, in de kolom "soortgebruiker": “admin” komt. Zorg
+2. Wil je opnieuw starten, zorg dan dat er in de tabel "user", in de kolom "soortgebruiker": “admin” komt. Zorg
 ook dat er 4 pagina’s worden ingevult in de page_tabel.
 3. Ga naar de terminal waar je naar de rootfile bent gelocaliseerd. Zorg dat er nog een key
 wordt aangemaakt met php artisan key:generate. 
-4. Geef dan in npm install.  
-5. Geef in php artisan serve. De server zal gestart worden.
+5. Geef in de terminal php artisan serve. De server zal gestart worden.
+![](images/terminal.jpg)
