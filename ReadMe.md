@@ -1,6 +1,6 @@
 # Hoe moet je opstarten?
 ![](startup.jpg)
-Om deze site in gang te krijgen zal je eerst naar deze link moeten gaan:
+Om deze site te starten zal je eerst naar deze link moeten gaan:
 https://github.com/gdm-1718-annadela/MMP_NMD_EXAMEN_WEBDEV/tree/master/laravel/kickstarter
 
 1. Dan kan je kiezen of je om github zal downloaden of clonen.
