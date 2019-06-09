@@ -1,4 +1,251 @@
-@import url(https://fonts.googleapis.com/css?family=Nunito);.m-projects {
+@import url(https://fonts.googleapis.com/css?family=Nunito);.m-table {
+  margin-top: 70px;
+  margin-left: 15vw;
+}
+
+.a-tables {
+  display: block;
+  color: #3A1B42;
+  font-family: "Exo 2", sans-serif;
+  margin-top: 10px;
+}
+
+.m-nav {
+  background-color: white;
+  font-family: "Nunito", sans-serif;
+  width: 15vw;
+  height: 100vh;
+  position: absolute;
+  top: 0;
+  left: 0;
+  padding: 75px 0 0 40px;
+  box-sizing: border-box;
+}
+
+.o-wrapper {
+  margin-top: 90px;
+  width: 100%;
+  height: 80vh;
+}
+
+.header {
+  background-color: #3A1B42 !important;
+  color: white;
+  font-family: "Exo 2", sans-serif;
+}
+
+.m-mobile__nav {
+  background-color: transparent;
+  border: none;
+  margin-left: 20px;
+}
+
+.m-mobile__nav i {
+  color: #3A1B42;
+  font-size: 14px;
+}
+
+@media only screen and (min-width: 950px) {
+  .o-wrapper {
+    overflow-y: scroll;
+  }
+}
+
+.m-table {
+  margin: 0 0 40px 8vw;
+  display: table;
+  width: 80vw;
+}
+
+.row {
+  display: table-row;
+  background: white;
+  height: 50px;
+}
+
+.cell {
+  padding: 6px 12px;
+  display: table-cell;
+}
+
+a.cell {
+  color: #3A1B42;
+}
+
+.m-mobile__nav {
+  display: none;
+}
+
+.a-title__table {
+  display: none;
+}
+
+.a-table__add {
+  background-color: white !important;
+}
+
+.a-table__add i {
+  color: #3A1B42 !important;
+}
+
+@media only screen and (max-width: 950px) {
+  .o-wrapper {
+    margin-bottom: 500px;
+    margin-top: 0;
+    height: 900px;
+  }
+
+  .m-table {
+    display: inline;
+  }
+
+  .row {
+    display: inline;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.2);
+  }
+
+  .header {
+    display: none;
+  }
+
+  .m-nav {
+    width: 100vw;
+    background-color: #3A1B42;
+  }
+
+  .cell {
+    display: block;
+    background-color: #f8fafc;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.2);
+    width: 80vw;
+    margin: 0 auto;
+  }
+
+  .a-tables {
+    color: white;
+    font-family: "Exo 2", sans-serif;
+    margin-top: 10px;
+  }
+
+  .m-mobile__nav {
+    display: block;
+    color: black;
+    z-index: 1;
+  }
+
+  .m-nav {
+    display: none;
+  }
+
+  .a-title__table {
+    display: block;
+    font-family: "Exo 2", sans-serif;
+    font-size: 30px;
+    text-align: center;
+  }
+}
+
+.m-tekst__pages {
+  padding: 40px;
+  line-height: 170%;
+  font-family: "Nunito", sans-serif;
+}
+
+.a-contact {
+  width: 50%;
+  font-family: "Nunito", sans-serif;
+}
+
+.a-privacy {
+  overflow-y: scroll;
+  height: 90vh;
+  position: absolute;
+  bottom: 0px;
+  right: 0px;
+}
+
+::-webkit-scrollbar {
+  width: 10px;
+}
+
+/* Track */
+
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+/* Handle */
+
+::-webkit-scrollbar-thumb {
+  background: transparent;
+}
+
+/* Handle on hover */
+
+::-webkit-scrollbar-thumb:hover {
+  background: transparent;
+}
+
+.m-form__top {
+  width: 50%;
+}
+
+.a-news__title {
+  font-size: 30px;
+  font-family: "Exo 2", sans-serif;
+  margin-left: 15px;
+  text-align: center;
+}
+
+.a-news__text {
+  font-size: 14px;
+  font-family: "Nunito", sans-serif;
+  text-align: justify;
+  width: 95%;
+  margin-left: 15px;
+}
+
+.a-news__introduction,
+.a-news__end {
+  color: #3A1B42;
+  margin-left: 15px;
+}
+
+.m-scroll {
+  overflow-y: scroll;
+  background-image: url(/images/news.jpg?7612ee6639a127a844537f0d52085adf);
+  background-size: cover;
+}
+
+.o-container {
+  background-image: url(/images/background.jpg?38cafeb3c3e09e5c4d6c21f7edfbb7df);
+  background-size: cover;
+  width: 100vw;
+  height: 100vh;
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  z-index: -2;
+}
+
+.alert-success {
+  color: green;
+}
+
+@media only screen and (max-width: 950px) {
+  .a-contact {
+    width: 80vw;
+  }
+
+  .m-tekst__pages {
+    padding: 0;
+    margin-top: 100px;
+  }
+}
+
+.m-projects {
   display: flex;
   justify-content: flex-start;
   flex-wrap: wrap;
@@ -9,9 +256,8 @@
 }
 
 .m-card {
-  margin-top: 100px;
   width: 20vw;
-  height: 45vh;
+  height: 400px;
   box-shadow: 5px 5px 5px gray;
 }
 
@@ -26,7 +272,6 @@
      object-fit: cover;
   width: 20vw;
   height: 20vh;
-  z-index: -1;
 }
 
 .a-title__project {
@@ -77,6 +322,7 @@
 .m-buttons__projects {
   display: flex;
   justify-content: space-between;
+  margin-bottom: 20px;
 }
 
 .a-button__projects {
@@ -98,7 +344,8 @@
 }
 
 .a-detail__projects {
-  background-color: #4dc0b5;
+  background-color: #3A1B42;
+  color: white;
 }
 
 @media only screen and (max-width: 950px) {
@@ -115,14 +362,13 @@
   .m-card {
     margin-top: 20px;
     width: 45vw;
-    height: 50vh;
+    height: 60vh;
     box-shadow: 5px 5px 5px gray;
   }
 
   .a-image {
     width: 45vw;
     height: 20vh;
-    z-index: -1;
   }
 
   .m-add__card {
@@ -183,6 +429,17 @@
   padding-top: 10px;
   left: 0;
   right: 0;
+  z-index: 1;
+}
+
+.a-profile__header img {
+  -o-object-fit: cover;
+     object-fit: cover;
+  width: 70px;
+  height: 70px;
+  position: absolute;
+  right: 0;
+  top: 0;
 }
 
 @media only screen and (min-width: 950px) {
@@ -241,6 +498,10 @@
     display: block;
   }
 
+  .a-profile__header img {
+    display: none;
+  }
+
   .o-header__home,
   .o-header__page {
     display: flex;
@@ -290,6 +551,22 @@ a {
   box-shadow: 3px 3px 5px gray;
 }
 
+.a-margin-top {
+  margin-top: 100px;
+}
+
+.a-margin-left {
+  margin-left: 20px;
+}
+
+.a-text__left {
+  text-align: left;
+}
+
+.a-display__none {
+  display: none;
+}
+
 .o-body__home {
   background-image: url(/images/background.jpg?38cafeb3c3e09e5c4d6c21f7edfbb7df);
   background-size: cover;
@@ -313,6 +590,21 @@ a {
   display: none;
 }
 
+.dropdown {
+  font-size: 30px;
+  font-family: "Exo 2", sans-serif;
+  list-style-type: none;
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.dropdown a {
+  color: white;
+}
+
 @media only screen and (max-width: 950px) {
   .m-body__headingtitle-tablet {
     display: none;
@@ -325,13 +617,24 @@ a {
   .m-body__headingtitle-mobile img {
     width: 70vw;
   }
+
+  .a-home__image {
+    position: relative;
+    left: 10%;
+    top: 20vh;
+  }
 }
 
 .o-login {
   display: flex;
   width: 100vw;
-  height: 100vh;
   align-items: center;
+}
+
+@media only screen and (min-width: 950px) {
+  .o-login {
+    height: 100vh;
+  }
 }
 
 .m-left-image {
@@ -406,6 +709,10 @@ a {
   height: 10vh;
 }
 
+.a-label {
+  font-family: "Exo 2", sans-serif;
+}
+
 @media only screen and (max-width: 950px) {
   .m-left-image {
     display: none;
@@ -417,6 +724,8 @@ a {
 
   .m-form__login {
     width: 100vw;
+    padding: 10px;
+    box-sizing: border-box;
   }
 
   .a-input__login {
@@ -503,8 +812,13 @@ a {
 
 .m-details {
   width: 45vw;
-  height: 80vh;
   margin-left: 10px;
+}
+
+@media only screen and (min-width: 950px) {
+  .m-details {
+    height: 80vh;
+  }
 }
 
 .m-project__header {
@@ -542,8 +856,10 @@ a {
   margin-top: 20px;
 }
 
-.m-left-noflex {
-  display: none;
+@media only screen and (min-width: 950px) {
+  .m-left-noflex {
+    display: none;
+  }
 }
 
 #myImagesBtn {
@@ -597,7 +913,46 @@ a {
   background-color: #f1dccb;
 }
 
+.m-image__select {
+  position: relative;
+  margin: 0;
+  padding: 0;
+}
+
+.a-image__select {
+  position: absolute;
+  color: white;
+  margin: 0;
+  background-image: none;
+  font-size: 20px;
+  top: 50%;
+  left: 10%;
+}
+
+.a-reactions {
+  font-size: 14px;
+  font-family: "Nunito", sans-serif;
+  margin-left: 40px;
+  box-shadow: 4px 4px 5px #a7a7a7;
+  padding: 10px 0;
+  width: 40vw;
+  background-image: url(/images/news.jpg?7612ee6639a127a844537f0d52085adf);
+  background-size: cover;
+}
+
 @media only screen and (max-width: 950px) {
+  .a-reactions {
+    width: 80vw;
+  }
+
+  .a-image__select {
+    left: 50%;
+  }
+
+  .m-left-noflex {
+    display: none;
+  }
+
   .m-deal {
     display: flex;
     justify-content: space-between;
@@ -605,22 +960,23 @@ a {
   }
 
   .o-detail {
-    flex-direction: column-reverse;
+    flex-wrap: wrap;
     align-items: center;
-    justify-content: flex-start;
-    width: 100vw;
+    flex-direction: column-reverse;
   }
 
   .m-left-images {
-    width: 80vw;
+    width: 100vw;
+    height: 20px;
+    margin-bottom: 400px;
   }
 
   .m-details {
-    width: 80vw;
+    width: 90vw;
   }
 
   .m-fullbar {
-    width: 80vw;
+    width: 90vw;
   }
 
   .a-image__detail {
@@ -628,8 +984,158 @@ a {
   }
 
   .a-image__detail img {
-    width: 20vw;
-    height: 10vh;
+    width: 33vw;
+    height: 20vh;
+    margin: 0px;
+  }
+
+  .my_images {
+    margin: 0;
+  }
+
+  .a-project__text {
+    font-size: 15px;
+  }
+
+  .a-project__links {
+    font-size: 15px;
+  }
+
+  .a-project__width {
+    width: 90vw;
+  }
+
+  .a-project__donate,
+  .a-button__width {
+    width: 43vw;
+  }
+
+  .a-button__kijker {
+    width: 90vw;
+  }
+
+  .m-project_uploadimage {
+    position: relative;
+    width: 40px;
+    height: 40px;
+  }
+}
+
+.m-account__cards {
+  display: flex;
+  width: 50vw;
+  flex-wrap: wrap;
+  margin-top: 20px;
+}
+
+.m-project__account {
+  width: 30%;
+}
+
+.m-project__account {
+  margin-right: 20px;
+}
+
+.a-image__account {
+  position: relative;
+  -o-object-fit: cover;
+     object-fit: cover;
+  width: 100%;
+  height: 20vh;
+}
+
+.m-form__account {
+  margin-left: 40px;
+  height: 100vh;
+  overflow-y: scroll;
+}
+
+.m-account__top {
+  display: flex;
+  justify-content: flex-start;
+}
+
+.a-image__account {
+  z-index: -1;
+}
+
+.a-image__account img {
+  -o-object-fit: cover;
+     object-fit: cover;
+  z-index: -1;
+  width: 200px;
+  height: 200px;
+}
+
+.m-square__account {
+  position: fixed;
+  width: 200px;
+  height: 200px;
+  margin-top: -205px;
+  color: rgba(255, 255, 255, 0);
+}
+
+.m-square__account:hover {
+  background-color: rgba(255, 255, 255, 0.315);
+  transition: 0.2s;
+}
+
+::-webkit-file-upload-button {
+  background: transparent;
+  color: transparent;
+  border: none;
+  display: none;
+}
+
+.a-button__account {
+  width: 200px !important;
+  font-size: 14px !important;
+  display: none;
+}
+
+.m-projecthead__account {
+  position: relative;
+}
+
+.a-projectitel__account {
+  font-size: 30px;
+  font-family: "Exo 2", sans-serif;
+  text-transform: uppercase;
+  color: white;
+  position: absolute;
+  background-color: rgba(63, 6, 63, 0.418);
+  margin: 0;
+  width: 100%;
+  height: 20vh;
+  padding: 20px;
+  box-sizing: border-box;
+}
+
+@media only screen and (max-width: 950px) {
+  .m-form__top {
+    width: 100%;
+  }
+
+  .m-account__cards {
+    width: 100%;
+  }
+
+  .m-project__account {
+    width: 45%;
+  }
+
+  .m-account__top {
+    flex-direction: column;
+  }
+
+  .m-square__account {
+    margin-top: -150px;
+  }
+}
+
+@media only screen and (max-width: 500px) {
+  .m-project__account {
+    width: 100%;
   }
 }
 

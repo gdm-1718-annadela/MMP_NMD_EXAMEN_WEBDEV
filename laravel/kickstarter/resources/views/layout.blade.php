@@ -18,9 +18,7 @@
 </head>
 <body @if (Request::path() == '/') class="o-body__home" @else class='o-body__page' @endif>
   @yield('homecontent')
-    
   @include('partials.header')
-
   @yield('pagecontent')
   @if (session('fail'))
     <div class="alert alert-danger">

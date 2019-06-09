@@ -21,12 +21,14 @@ class ProjectController extends Controller
     public function projects() {
         $projects = Project::all()->where('gepubliceerd_tot', '>', Carbon::now())->sortBy('categorie_id');
         $users = User::all();
-        return view('projects')->with(compact('projects', 'users'));
+        $userId = Auth::user();
+        return view('projects')->with(compact('projects', 'users','userId'));
     }
 
     public function createProject() {
         $categories = Categorie::all();
-        return view('createform')->with(compact('categories'));
+        $userId = Auth::user();
+        return view('createform')->with(compact('categories','userId'));
     }
 
     public function saveProject(Request $request) {
@@ -62,8 +64,9 @@ class ProjectController extends Controller
     public function editProject($project_id) {
         $project = Project::where('id',$project_id)->first();
         $categories = Categorie::all();
+        $userId = Auth::user();
 
-        return view('/editProject')->with(compact('project', 'categories'));
+        return view('/editProject')->with(compact('project', 'categories','userId'));
     }
 
     public function updateProject($project_id) {
@@ -88,7 +91,6 @@ class ProjectController extends Controller
     public function deleteProject($project_id) {
         $project = Project::where('id',$project_id)->delete();
         return redirect()->back();
-
     }
 
     public function detailProject($project_id) {
@@ -98,10 +100,11 @@ class ProjectController extends Controller
         $categorie = Categorie::where('id', $project->categorie_id)->first()->categorie;
         $totaldonated = Fund::all()->where('project_id', $project_id)->sum('bedrag');
         $fundhistory = Fund::all()->where('project_id' , $project_id);
+        $userId = Auth::user();
         if(Auth::check()){
             $projectcreater = Auth::user()->where('id', $project->user_id)->first();
             $user = Auth::user()->credits;
-            return view('/detailProject')->with(compact('project', 'user', 'images', 'reacties', 'totaldonated', 'fundhistory','projectcreater','categorie'));
+            return view('/detailProject')->with(compact('project', 'user', 'images', 'reacties', 'totaldonated', 'fundhistory','projectcreater','categorie','userId'));
         } else {
             return view('/detailProject')->with(compact('project', 'images', 'reacties', 'totaldonated', 'fundhistory', 'categorie'));
         }
@@ -171,20 +174,33 @@ class ProjectController extends Controller
         $project = Project::where('id', $project_id)->first();
         $user = User::where('id', $project->user_id)->first();
         $categorie = Categorie::where('id', $project->categorie_id)->first()->categorie;
-        $funding = Fund::where('project_id', $project->id)->first();
+        $funding = Fund::all()->where('project_id', $project->id);
         $image = Image::where('project_id', $project->id)->inRandomOrder()->first();
-
+        $reacties = Reactie::all()->where('project_id', $project_id);
+        // dd($reacties);
         if($image == null) {
             $data = [
-                'imagepath' => '../resources/images',
-                'imagename' => 'logo.png',
+                'imagepath' => '../public/images',
+                'imagename' => 'test.png',
                 'titel'=> $project->naam,
+                'gedoneerd'=> $project->credits_gesubsideert,
+                'doelbedrag'=> $project->credits_doelbedrag,
+                'categorie' => $categorie,
+                'reacties' => $reacties,
+                'donaties' => $funding,
+                'uitleg' => $project->uitleg,
                 ];
         } else {
             $data = [
                 'imagepath' => $image->path,
                 'imagename' => $image->title,
                 'titel'=> $project->naam,
+                'gedoneerd'=> $project->credits_gesubsideert,
+                'doelbedrag'=> $project->credits_doelbedrag,
+                'categorie' => $categorie,
+                'reacties' => $reacties,
+                'donaties' => $funding,
+                'uitleg' => $project->uitleg,
             ];
         }
 
@@ -216,5 +232,30 @@ class ProjectController extends Controller
         }
         
         
+    }
+
+    public function deleteCategorie($categorie_id){
+        $categorie = Categorie::where('id',$categorie_id)->delete();
+        return redirect()->back();
+    }
+
+    public function createCategorie(){
+        $userId = Auth::user();
+        return view('createCategorie')->with(compact('userId'));
+    }
+
+    public function saveCategorie(){
+        \request()->validate( [
+            'categorie'=>'required',
+         ]);
+
+    
+        $data = [
+            'categorie'=>request('categorie'),
+        ];
+
+        $categorie= Categorie::create($data);
+        
+        return redirect('/admin/categorie');
     }
 }

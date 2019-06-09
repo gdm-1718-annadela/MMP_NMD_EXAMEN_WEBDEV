@@ -13,4 +13,8 @@ class Reactie extends Model
         'project_id',
         'user_id',
     ];
+
+    public function users(){
+        return $this->hasOne('App\User');
+    }
 }

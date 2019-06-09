@@ -1,0 +1,120 @@
+.m-account__cards{
+  display: flex;
+  width: 50vw;
+  flex-wrap: wrap;
+  margin-top: 20px;
+}
+
+.m-project__account{
+  width: 30%;
+}
+
+.m-project__account{
+  margin-right: 20px;
+}
+
+.a-image__account {
+  position: relative;
+  object-fit: cover;
+  width: 100%;
+  height: 20vh;
+}
+
+
+.m-form__account{
+  margin-left: 40px;
+  height: 100vh;
+  overflow-y: scroll;
+}
+
+.m-account__top{
+  display: flex;
+  justify-content: flex-start;
+}
+
+.a-image__account{
+  z-index: -1;
+}
+
+
+.a-image__account img {
+  object-fit: cover;
+  z-index: -1;
+  width: 200px;
+  height: 200px;
+}
+
+.m-square__account{
+  position: fixed;
+  width: 200px;
+  height: 200px;
+  margin-top: -205px;
+  color: rgba(255, 255, 255, 0);
+}
+
+.m-square__account:hover{
+  background-color: rgba(255, 255, 255, 0.315);
+  transition: 0.2s;
+}
+
+::-webkit-file-upload-button {
+  background: transparent;
+  color: transparent;
+  border: none;
+  display: none;
+}
+
+.a-button__account{
+  width: 200px !important;
+  font-size: $font-size-14 !important;
+  display: none;
+}
+
+.m-projecthead__account{
+  position: relative;
+}
+
+.a-projectitel__account{
+  font-size: $font-size-30;
+  font-family: $font-family-title;
+  text-transform: uppercase;
+  color: white;
+  position: absolute;
+  background-color: rgba(63, 6, 63, 0.418);
+  margin: 0;
+  width: 100%;
+  height: 20vh;
+  padding: 20px;
+  box-sizing: border-box;
+}
+
+@media only screen and (max-width: 950px) {
+  .m-form__top{
+    width: 100%;
+  }
+
+  .m-account__cards{
+    width: 100%;
+  }
+
+  .m-project__account{
+    width: 45%;
+  }
+
+  .m-account__top{
+    flex-direction: column;
+  }
+  
+  .m-square__account{
+    margin-top: -150px;
+}
+
+
+}
+
+@media only screen and (max-width: 500px) {
+  .m-project__account{
+    width: 100%;
+  }
+
+}

@@ -39,4 +39,8 @@ class Project extends Model
         return $this->hasMany('App\Models\Image');
     }
 
+    public function reactions() {
+        return $this->hasMany('App\Models\Reactie');
+    }
+
 }

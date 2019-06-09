@@ -23,6 +23,7 @@
     </div>
     <div class="m-left-images m-left-noflex" id="myReactions">
         <form method="post" class="reactieformulier" action="{{ route('reactieUpload', $project->id) }}">
+            <h1 class="a-title-login a-margin-left">Reacties</h1>
             @csrf
             @if(Auth::check())
                 @if($project->user_id !== Auth::user()->id)
@@ -35,13 +36,13 @@
         </form>
 
         @foreach($reacties as $reactie)
-        <p>{{ $reactie->reactie }}</p>
+        <p class="a-reactions">{{ $reactie->reactie }}</p>
         @endforeach
     </div>
     <div class="m-left-images m-left-noflex" id="myDonations">
-        <h1 class="a-project__naam">gefund</h1>
+            <h1 class="a-title-login a-margin-left">Sponsoring</h1>
         @foreach($fundhistory as $fund)
-            <p>{{$fund->user_name}} heeft {{ $fund->bedrag}} credits gedoneerd</p>
+            <p class="a-reactions">{{$fund->user_name}} heeft {{ $fund->bedrag}} credits gedoneerd</p>
         @endforeach
     </div>
     <div class="m-details">
@@ -49,14 +50,19 @@
             <h1 class="a-project__naam">{{ $project->naam }}</h1>
             @if(Auth::check())<p class="a-project__text">{{ $projectcreater->name }}</p>@endif
         </div>
-        <p class="a-project__text">{{ $categorie }}</p>
+        <p class="a-project__text">categorie: {{ $categorie }}</p>
         <p class="a-project__text">{{ $project->uitleg }}</p>
         <div class="m-project__header">
-                <p class="a-project__text">Gesponserd: {{ $project->credits_gesubsideert }}</p>
-                <p class="a-project__text">Doelbedrag: {{ $project->credits_doelbedrag }}</p>
+                <p class="a-project__text">Sponsoring: 
+                    @if($project->credits_gesubsideert > 0)
+                    {{ $project->credits_gesubsideert }} credits</p>
+                    @else
+                    0 credits
+                    @endif
+                <p class="a-project__text">Doelbedrag: {{ $project->credits_doelbedrag }} credits</p>
         </div>
         <div class='m-fullbar m-shadow' >
-            <div class="m-donatedbar m-shadow" style=" width: {{$totaldonated / $project->credits_doelbedrag *100}}%; background-color: #3A1B42; height: 30px;">
+            <div class="m-donatedbar m-shadow" style=" width: {{$project->credits_gesubsideert / $project->credits_doelbedrag *100}}%; background-color: #3A1B42; height: 30px;">
             </div>
         </div>
 
@@ -86,20 +92,28 @@
         @if(Auth::check() && $project->kijker == false)
             @if($project->user_id == Auth::user()->id || Auth::user()->soortgebruiker == 'admin')
                 <form action="{{ route('kijker', $project->id) }}">
-                    <p>betaal 1000 credits en zet jou project in de kijker!</p>
-                    <button class="a-button__login " type="submit">zet in de kijker</button>
+                    <p>betaal 1000 credits en zet jouw project in de kijker!</p>
+                    @if(Auth::user()->credits >= 1000)
+                    <button class="a-button__login a-button__kijker" type="submit">zet in de kijker</button>
+                    @endif
                 </form>
             @endif
         @endif
 
         @if(Auth::check())
             @if($project->user_id == Auth::user()->id || Auth::user()->soortgebruiker == 'admin')
-                <div id="myImagesPost"class="m-project__image m-project_uploadimage">
-                    <form action="{{ route('imageUpload', $project->id) }}" method="post" enctype="multipart/form-data" class="form-group">
+                <div id="myImagesPost">
+                    <form action="{{ route('imageUpload', $project->id) }}" method="post" enctype="multipart/form-data">
                         @csrf
                         <input type="text" name="project_id" value="{{$project->id}}" hidden>
-                        <div onclick="ophaalFunction()" id="ophalen" class="a-button__login m-button__login" ><input class="a-button__file" type="file" name="file[]" id="file"  multiple></div>
-                        <button onclick="postFunction()"class="a-button__login" type="submit" class="form-control btn btn-primary">Afbeelding posten</button>
+                        <div id="add" class="m-image__select">
+                            <span class="a-image__select a-tablet">Voeg afbeelding toe</span>
+                            <span class="a-image__select a-mobile">+</span>
+                            <input onclick="myFunction()" class="a-button__login a-button__kijker" type="file" name="file[]" id="file" multiple>
+                        </div>
+                        <button id="bevestig" class="a-button__login a-button__kijker a-display__none" type="submit" class="form-control btn btn-primary">
+                            Afbeelding posten
+                        </button>
                     </form>
                 </div>
             @endif
@@ -213,5 +227,14 @@
             a.style.display = "block";
         }
     }
+
+    function myFunction(){
+        let a = document.getElementById('bevestig');
+        let b = document.getElementById('add');
+        a.style.display = "block";
+        b.style.display = "none";
+        
+    }
+
 
 </script>

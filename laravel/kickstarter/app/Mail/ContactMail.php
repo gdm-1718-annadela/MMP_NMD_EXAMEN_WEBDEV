@@ -29,7 +29,7 @@ class ContactMail extends Mailable
      */
     public function build()
     {
-        $data = Auth::user()->name;
-        return $this->view('contactmail')->with(compact('data'));
+        $name = Auth::user()->name;
+        return $this->view('contactmail')->with(compact('name'));
     }
 }

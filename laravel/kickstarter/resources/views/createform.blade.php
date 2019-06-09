@@ -18,7 +18,8 @@
     <textarea name="uitleg" type="text" class="a-input__login a-input__textarea" placeholder="Een woordje uitleg over jou project" ></textarea>
 
     <input name="doelbedrag" type="number" placeholder="Geef een doelbedrag in" class="a-input__login" value="{{ old('doelbedrag') }}">
-
+    
+    <label class="a-label">Wat is jou deadline?</label>
     <input name="deadline" type="date" class="a-input__login" placeholder="Wat is jou deadline">
 
     <div class="m-deal">

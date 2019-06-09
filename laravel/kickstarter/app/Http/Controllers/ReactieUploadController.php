@@ -23,4 +23,9 @@ class ReactieUploadController extends Controller
         Reactie::create($data);
         return redirect()->back();
     }
+
+    public function deleteReaction($reaction_id){
+        $reaction = Reactie::where('id',$reaction_id)->delete();
+        return redirect()->back();
+    }
 }

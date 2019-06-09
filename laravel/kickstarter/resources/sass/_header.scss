@@ -5,7 +5,7 @@
 }
 
 .o-header__page{
-  display:flex;
+  display: flex;
   justify-content: flex-start;
   background-color: $purple;
   margin: 0;
@@ -14,6 +14,16 @@
   padding-top: 10px;
   left:0;
   right:0;
+  z-index: 1;
+}
+
+.a-profile__header img{
+  object-fit: cover;
+  width: 70px;
+  height: 70px;
+  position: absolute;
+  right: 0;
+  top: 0;
 }
 
 @media only screen and (min-width: 950px) {
@@ -70,6 +80,12 @@
   .a-mobile {
     display: block;
   }
+
+  
+  .a-profile__header img{
+    display: none;
+  }
+
 
   .o-header__home, .o-header__page{
     display: flex;

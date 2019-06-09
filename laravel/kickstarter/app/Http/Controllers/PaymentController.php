@@ -18,7 +18,9 @@ class PaymentController extends Controller
         // dd($cost);
 
         $user = Auth::user()->credits;
-        return view('payment')->with(compact('user'));
+        $userId = Auth::user();
+
+        return view('payment')->with(compact('user','userId'));
     }
 
     public function postStripePayment(Request $r) {

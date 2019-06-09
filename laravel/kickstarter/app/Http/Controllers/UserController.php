@@ -26,8 +26,8 @@ class UserController extends Controller
                                         ->with('fail' , 'Er ging iets mis met het uploaden van uw afbeelding');
             }
             if($request->hasFile('file')){
-                dd($$request->userId);
-                $directory = 'product'.$request->userId;
+                // dd($request->userId);
+                $directory = 'user'.$request->userId;
 
 
                 foreach($request->file('file') as $image){
@@ -47,10 +47,34 @@ class UserController extends Controller
     }
 
     private function storeImageToDatabase( $user_id, $filename, $filepath){
-        $profileImage = Image::where('user_id', Auth::user()->id)->first();
-        $profileImage->update([
+        $profileImage = User::where('id', Auth::user()->id)->first();
+        // dd($filename, $filepath);
+        User::where('id', Auth::user()->id)->update([
             'fototitel' => $filename,
             'fotopad' => $filepath,
         ]);
+    }
+
+    public function delete($user_id) {
+        $users = User::where('id',$user_id)->delete();
+        return redirect()->back();
+    }
+
+    public function edit($user_id){
+        $user = User::where('id',$user_id)->first();
+        $userId = Auth::user();
+
+        return view('/auth/editUser')->with(compact('user','userId'));
+    }
+
+    public function update($user_id){
+        $user = User::where('id',$user_id)->first();
+        $data = [
+            'name'=>request('name'),
+            'email'=>request('email'),
+        ];
+
+        $user->update($data);
+        return redirect()->back()->with('succes', 'updated');
     }
 }

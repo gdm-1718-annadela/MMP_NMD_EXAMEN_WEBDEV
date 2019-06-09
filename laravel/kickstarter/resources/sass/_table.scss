@@ -1,0 +1,145 @@
+.m-table{
+  margin-top: 70px;
+  margin-left: 15vw;
+}
+
+.a-tables{
+  display: block;
+  color: $purple;
+  font-family: $font-family-title;
+  margin-top: 10px;
+}
+
+.m-nav{
+  background-color: white;
+  font-family: $font-family-sans-serif;
+  width: 15vw;
+  height: 100vh;
+  position: absolute;
+  top: 0;
+  left: 0;
+  padding: 75px 0 0 40px;
+  box-sizing: border-box;
+}
+
+.o-wrapper{
+  margin-top: 90px;
+  width: 100%;
+  height: 80vh;
+}
+
+.header {
+  background-color: $purple !important;
+  color: white;
+  font-family: $font-family-title;
+}
+
+.m-mobile__nav{
+  background-color: transparent;
+  border:none;
+  margin-left: 20px;
+}
+
+.m-mobile__nav i {
+  color: $purple;
+  font-size: $font-size-14;
+}
+
+@media only screen and (min-width: 950px) {
+  .o-wrapper{
+    overflow-y:scroll;
+  }
+}
+.m-table{
+  margin: 0 0 40px 8vw;
+  display: table;
+  width: 80vw;
+}
+
+.row{
+  display: table-row;
+  background: white;
+  height: 50px;
+}
+
+.cell{
+  padding: 6px 12px;
+  display: table-cell;
+
+
+}
+
+a.cell {
+  color: $purple;
+}
+
+.m-mobile__nav{
+  display: none;
+}
+
+
+.a-title__table{
+  display: none;
+}
+
+.a-table__add{
+  background-color: white !important;
+}
+
+.a-table__add i{
+  color: $purple !important;
+
+}
+@media only screen and (max-width: 950px) {
+  .o-wrapper{
+    margin-bottom: 500px;
+    margin-top: 0;
+    height: 900px;
+  }
+  .m-table{
+    display: inline;
+  }
+  .row{
+    display: inline;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.2);
+  }
+  .header{
+    display: none;
+  }
+  .m-nav{
+    width: 100vw;
+    background-color: $purple;
+  }
+
+  .cell{
+    display: block;
+    background-color: $body-bg;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.2);
+    width: 80vw;
+    margin: 0 auto;
+  }
+
+  .a-tables{
+    color: white;
+    font-family: $font-family-title;
+    margin-top: 10px;
+  }
+
+  .m-mobile__nav{
+    display: block;
+    color: black;
+    z-index: 1;
+  }
+  .m-nav {
+    display: none;
+  }
+
+  .a-title__table{
+    display: block;
+    font-family: $font-family-title;
+    font-size: $font-size-30;
+    text-align: center;
+  }
+  
+  
+}

@@ -2,7 +2,6 @@
   display: flex;
   justify-content: flex-start;
   flex-wrap: wrap;
-
 }
 
 .m-project {
@@ -10,9 +9,9 @@
 }
 
 .m-card {
-  margin-top: 100px;
+  // margin-top: 100px;
   width: 20vw;
-  height: 45vh;
+  height: 400px;
   box-shadow: 5px 5px 5px gray;
 }
 
@@ -27,7 +26,6 @@
   object-fit: cover;
   width: 20vw;
   height: 20vh;
-  z-index: -1;
 }
 
 .a-title__project {
@@ -78,6 +76,7 @@
 .m-buttons__projects{
   display: flex;
   justify-content: space-between;
+  margin-bottom: 20px;
 }
 .a-button__projects{
   margin-top: 10px;
@@ -98,7 +97,8 @@
 }
 
 .a-detail__projects{
-  background-color: $teal;
+  background-color: $purple;
+  color: white;
 }
 
 @media only screen and (max-width: 950px) {
@@ -115,14 +115,13 @@
   .m-card {
     margin-top: 20px;
     width: 45vw;
-    height: 50vh;
+    height: 60vh;
     box-shadow: 5px 5px 5px gray;
   }
 
   .a-image {
     width: 45vw;
     height: 20vh;
-    z-index: -1;
   }
 
   .m-add__card{

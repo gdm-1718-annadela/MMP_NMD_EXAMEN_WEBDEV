@@ -62,8 +62,11 @@
 
 .m-details {
   width: 45vw;
-  height: 80vh;
   margin-left: 10px;
+  @media only screen and (min-width: 950px) {
+    height: 80vh;
+  }
+
 }
 
 .m-project__header{
@@ -100,7 +103,9 @@
 }
 
 .m-left-noflex{
-  display: none;
+  @media only screen and (min-width: 950px) {
+    display: none;
+  }
 }
 
 #myImagesBtn{
@@ -154,7 +159,45 @@
   background-color: #f1dccb;
 }
 
+.m-image__select{
+  position: relative;
+  margin: 0;
+  padding: 0;
+}
+.a-image__select{
+  position: absolute;
+  color: white;
+  margin: 0;
+  background-image: none;
+  font-size: $font-size-20;
+  top: 50%;
+  left: 10%;
+}
+
+.a-reactions{
+  font-size: $font-size-14;
+  font-family: $font-family-sans-serif;
+  margin-left: 40px;
+  box-shadow: 4px 4px 5px $dark-gray;
+  padding: 10px 0;
+  width: 40vw;
+  background-image: url(../../public/images/news.jpg);
+  background-size: cover;
+}
+
 @media only screen and (max-width: 950px) {
+  .a-reactions{
+    width: 80vw;
+  }
+  .a-image__select{
+    left: 50%;
+  }
+
+  .m-left-noflex{
+      display: none;
+  }
+
+
   .m-deal{
     display: flex;
     justify-content: space-between;
@@ -162,22 +205,23 @@
   }
 
   .o-detail{
-    flex-direction: column-reverse;
+    flex-wrap: wrap;
     align-items: center;
-    justify-content: flex-start;
-    width: 100vw;
+    flex-direction: column-reverse;
   }
 
   .m-left-images{
-    width: 80vw;
+    width: 100vw;
+    height: 20px;
+    margin-bottom: 400px;
   }
 
   .m-details{
-    width: 80vw;
+    width: 90vw;
   }
 
   .m-fullbar{
-    width: 80vw;
+    width: 90vw;
   }
 
   .a-image__detail{
@@ -185,10 +229,39 @@
   }
 
   .a-image__detail img {
-    width: 20vw;
-    height: 10vh;
+    width: 33vw;
+    height: 20vh;
+    margin: 0px;
+  }
+
+  .my_images{
+    margin: 0;
   }
   
+  .a-project__text{
+    font-size: 15px;
+  }
 
+  .a-project__links{
+    font-size: 15px;
+  }
 
+  .a-project__width{
+    width: 90vw;
+
+  }
+
+  .a-project__donate, .a-button__width {
+    width: 43vw;
+  }
+
+  .a-button__kijker{
+    width: 90vw;
+  }
+
+  .m-project_uploadimage{
+    position: relative;
+    width: 40px;
+    height: 40px;
+  }
 }

@@ -2,16 +2,22 @@
 
 @section('pagecontent')
 
-<h1>Contact</h1>
+<div class="o-login">
+    <div class="m-left-image"></div>
+    <div class="a-contact">
+      <form action={{route('contactmail')}} method="post" class="m-form__login">
 
-<form action={{route('contactmail')}} method="post">
-  @csrf
-  <label>titel</label><br>
-  <input type="text" name="mailtitel"><br>
 
-  <label>mail</label><br>
-  <textarea name="mailemail"></textarea><br>
+          <h1 class="a-title-login">{{ $page->titel }}</h1>
+          <div class="a-contact">{!! $page->tekst !!}</div>
+          @if(Auth::check())
+        @csrf
+        <input class="a-input__login" type="text" name="mailtitel" placeholder="titel">
+        <textarea class="a-input__login a-input__textarea" name="mailemail" placeholder="schrijf jou boodschap"></textarea><br>
 
-  <button type="submit">verzenden</button>
-</form>
+        <button class="a-button__login" type="submit">Verstuur mail</button>
+      @endif
+    </form>
+    </div>
+</div>
 @endsection

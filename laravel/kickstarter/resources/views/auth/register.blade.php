@@ -33,6 +33,7 @@
 
         <input class="a-input__login" id="password-confirm" type="password" class="form-control" name="password_confirmation" placeholder="Wachtwoord bevestigen" required>
 
+        <label class="a-label">Leeftijd</label>
         <input id="age-confirm" type="date" class="a-input__login" name="leeftijd" required>
 
         @if ($errors->has('leeftijd'))

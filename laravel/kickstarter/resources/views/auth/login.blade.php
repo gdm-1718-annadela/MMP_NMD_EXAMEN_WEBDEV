@@ -6,7 +6,7 @@
     <form class="m-form__login" method="POST" action="{{ route('login') }}">
         <h1 class="a-title-login">Login</h1>
         @csrf
-        <input id="email" type="email" class="a-input__login{{ $errors->has('email') ? ' is-invalid' : '' }}" name="email" value="{{ old('email') }}" placeholder="gebruikersnaam" required autofocus>
+        <input id="email" type="email" class="a-input__login{{ $errors->has('email') ? ' is-invalid' : '' }}" name="email" value="{{ old('email') }}" placeholder="emailadress" required autofocus>
 
         @if ($errors->has('email'))
             <span class="invalid-feedback" role="alert">

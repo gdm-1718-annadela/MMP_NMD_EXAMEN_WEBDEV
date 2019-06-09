@@ -5,19 +5,19 @@
 @if(Auth::check())<a class="a-create__project--mobile" href="{{ route('createProject') }}"><i class="fas fa-plus"></i></a>@endif
 <div class="m-projects">
     @if(Auth::check())
-    <div class="m-project m-add__card">
-    <div class="m-card">
-      <div class="m-image__project">
-        <img class="a-image" src="../images/background.jpg">
+      <div class="m-project m-add__card">
+        <div class="m-card a-margin-top">
+          <div class="m-image__project">
+            <img class="a-image" src="../images/background.jpg">
+          </div>
+          <h1 class="a-title__project">Voeg je eigen project toe!</h1>
+          <a class="a-create__project" href="{{ route('createProject') }}"><i class="fas fa-plus"></i></a>
+        </div>
       </div>
-      <h1 class="a-title__project">Voeg je eigen project toe!</h1>
-      <a class="a-create__project" href="{{ route('createProject') }}"><i class="fas fa-plus"></i></a>
-    </div>
-  </div>
     @endif
   @foreach($projects as $project)
     <div class="m-project">
-      <div class="m-card">
+      <div class="m-card a-margin-top">
         @if($project->images->first()['path']== null)
         <div class="m-image__project">
           <img class="a-image" src="../images/background.jpg">
