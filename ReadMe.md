@@ -10,7 +10,7 @@ hebt geplaatst.
 4. Je zal composer nodig hebben om de site te starten.
 5. Open een nieuwe terminal en geef composer global require “laravel/installer=~1.1” in.
 Of ga naar de site en volg de stappen om composer te installeren: https://getcomposer.org/download/
-6. Daarnaast zal je nog een envirementfile nodig hebben. Ga naar de rootfolder en maak daarin
+6. Daarnaast zal je nog een environment file nodig hebben. Ga naar de rootfolder en maak daarin
 een file “.env”.
 ## Wat moet er allemaal in de env file?
 APP_NAME=Laravel  
