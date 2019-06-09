@@ -4,7 +4,7 @@ Om deze site te starten zal je eerst naar deze link moeten gaan:
 https://github.com/gdm-1718-annadela/MMP_NMD_EXAMEN_WEBDEV/tree/master/laravel/kickstarter
 
 1. Dan kan je kiezen of je om github zal downloaden of clonen.
-2. De uitleg over hoe je deze opzet kan je ook terugvinden in de readme bestand.
+2. De uitleg over hoe je deze opzet kan je ook terugvinden in het ReadMe bestand.
 3. Achter het downloaden ga je naar de folder in de terminal. Localiseer naar waar je het document
 hebt geplaatst.
 4. Je zal composer nodig hebben om de site te starten.
