@@ -1,5 +1,5 @@
 # Hoe moet je opstarten?
-![](startup.jpg)
+![](images/startup.jpg)
 Om deze site te starten zal je eerst naar deze link moeten gaan:
 https://github.com/gdm-1718-annadela/MMP_NMD_EXAMEN_WEBDEV/tree/master/laravel/kickstarter
 
